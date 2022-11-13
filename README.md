@@ -10,7 +10,7 @@ class ParkBosung(BackendDeveloper):
     programming_language: Python | Java =  Python
     
     def __init__(self):
-        working_on : list=[str] = []
+        self.working_on : list=[str] = []
         
     def __enter__(self):
         self.working_on.extend(["EventDrivenArchitecture", "Async"])
