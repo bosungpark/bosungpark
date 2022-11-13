@@ -2,6 +2,7 @@
 from developer import BackendDeveloper
 import FreeDGroup
 
+
 class ParkBosung(BackendDeveloper):
     resides_in: str = "🇰🇷"
     company: FreeDGroup = FreeDGroup.FreeDSoft
