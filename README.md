@@ -1,9 +1,21 @@
-Hi there 🐍
+```python
+from developer import BackendDeveloper
+import FreeDGroup
 
-🐍 My name is Bosung Park.
+class ParkBosung(BackendDeveloper):
+    resides_in: str = "🇰🇷"
+    company: FreeDGroup = FreeDGroup.FreeDSoft
+    speaks: list[str] = ["ko", "en", "zh-cn"]
+    programming_language: Python | Java =  Python
+    
+    def __init__(self):
+        working_on : list=[str] = []
+        
+    def __enter__(self):
+        self.working_on.extend(["EventDrivenArchitecture", "Async"])
+        return super().__enter__()
 
-🐍 I'm currently fall for event-driven architecture and python concurrency
-
-🐍 targeting the super strong python backend developer
-
-[![Solved.ac프로필](http://mazassumnida.wtf/api/generate_badge?boj=qkrqhtjd0806)](https://solved.ac/qkrqhtjd0806)
+    def __exit__(self, *args):
+        super().__exit__(*args)
+        self.working_on.clear() 
+```
