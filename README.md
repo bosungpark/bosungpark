@@ -15,7 +15,7 @@ class ParkBosung(BackendDeveloper):
         return cls._instance    
     
     def __init__(self):
-        self.working_on : list=[str] = []
+        self.working_on : list[str] = []
         
     def __enter__(self):
         self.working_on.extend(["EventDrivenArchitecture", "Async"])
