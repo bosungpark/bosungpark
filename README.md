@@ -8,7 +8,6 @@ class ParkBosung(BackendDeveloper):
     company: FreeDGroup = FreeDGroup.FREED_SOFT
     speaks: list[str] = ["ko", "en", "zh-cn"]
     programming_language: Python | Java =  Python
-    studying: list[Any | None] = []
     
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, "_instance"):
@@ -17,6 +16,7 @@ class ParkBosung(BackendDeveloper):
     
     def __init__(self):
         self.working_on : list[str] = []
+        studying: list[Any | None] = []
         
     def __enter__(self):
         self.working_on.extend(["EventDrivenArchitecture", "Async"])
