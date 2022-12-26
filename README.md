@@ -24,6 +24,6 @@ class ParkBosung(BackendDeveloper):
 
     def __exit__(self, *args):
         super().__exit__(*args)
-        self.working_on.clear() 
         self.studying = next(w for w in self.working_on) or ""
+        self.working_on.clear()    
 ```
