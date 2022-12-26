@@ -16,7 +16,7 @@ class ParkBosung(BackendDeveloper):
     
     def __init__(self):
         self.working_on : list[str] = []
-        self.studying: str = ""
+        self.after_work: str = ""
         
     def __enter__(self):
         self.working_on.extend(["EventDrivenArchitecture", "Async"])
@@ -24,6 +24,6 @@ class ParkBosung(BackendDeveloper):
 
     def __exit__(self, *args):
         super().__exit__(*args)
-        self.studying = next(w for w in self.working_on) or ""
+        self.after_work = f"studying {next(w for w in self.working_on)}" or "sleeping"
         self.working_on.clear()    
 ```
