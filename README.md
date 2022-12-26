@@ -5,9 +5,10 @@ import FreeDGroup
 
 class ParkBosung(BackendDeveloper):
     resides_in: str = "🇰🇷"
-    company: FreeDGroup = FreeDGroup.FreeDSoft
+    company: FreeDGroup = FreeDGroup.FREED_SOFT
     speaks: list[str] = ["ko", "en", "zh-cn"]
     programming_language: Python | Java =  Python
+    studying: list[Any | None] = []
     
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, "_instance"):
@@ -24,4 +25,5 @@ class ParkBosung(BackendDeveloper):
     def __exit__(self, *args):
         super().__exit__(*args)
         self.working_on.clear() 
+        self.studying = [next(w for w in self.working_on)] or []
 ```
