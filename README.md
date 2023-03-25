@@ -24,6 +24,10 @@ class ParkBosung(BackendDeveloper):
 
     def __exit__(self, *args):
         super().__exit__(*args)
-        self.after_work = f"studying {next((w for w in self.working_on), None) or "nothing"}"
-        self.working_on.clear()    
+        self.after_work = f"studying {next((w for w in self.working_on), None) or 'nothing'}"
+        self.working_on.clear()
+        
+bosung_park = ParkBosung()
+with bosung_park:
+    ...
 ```
