@@ -15,17 +15,20 @@ class ParkBosung(BackendDeveloper):
         return cls._instance    
     
     def __init__(self):
-        self.working_on : list[str] = []
+        self.working_on: list[str] = []
+        self.interest: list[str] = []
         self.after_work: str = "sleeping"
         
     def __enter__(self):
-        self.working_on.extend(["MicroServiceArchitecture", "DistributedSystem"])
+        self.working_on.extend(["MicroServiceArchitecture", "EventDrivenArchitecture"])
+        self.interest.extend(["DistributedSystem"])
         return super().__enter__()
 
     def __exit__(self, *args):
         super().__exit__(*args)
-        self.after_work = f"studying {next((w for w in self.working_on), None) or 'nothing'}"
+        self.after_work = f"studying {next((w for w in self.working_on), None) or self.interest.pop()}"
         self.working_on.clear()
+        self.interest.clear()
         
 bosung_park = ParkBosung()
 with bosung_park:
