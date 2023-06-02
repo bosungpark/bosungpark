@@ -28,7 +28,7 @@ class ParkBosung(BackendDeveloper):
         super().__exit__(*args)
         self.after_work = f"studying {next((w for w in self.working_on), None) or self.interest.pop()}"
         self.working_on.clear()
-        self.interest.clear()
+        
         
 bosung_park = ParkBosung()
 with bosung_park:
