@@ -19,7 +19,7 @@ class ParkBosung(BackendDeveloper):
         self.after_work: str = "sleeping"
         
     def __enter__(self):
-        self.working_on.extend(["EventDrivenArchitecture", "DomainDrivenDesign", "concurrency"])
+        self.working_on.extend(["MicroServiceArchitecture", "DistributedSystem"])
         return super().__enter__()
 
     def __exit__(self, *args):
