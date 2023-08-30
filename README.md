@@ -1,20 +1,19 @@
 ```python
 import time
 
+from typing import Literal
 from developer import BackendDeveloper
-import FreeDGroup
 
 
 class ParkBosung(BackendDeveloper):
     resides_in: str = "🇰🇷"
-    company: FreeDGroup = FreeDGroup.FREED_SOFT
+    company: str = "looko"
     speaks: list[str] = ["ko", "en", "zh-cn"]
-    programming_language: Python | Java =  Python 
+    programming_language: Literal["python", "java", "golang", "c++"] =  "golang"
     
     def __init__(self):
-        self.interest: str | None
+        self.interest: str | None = None
         self.working_on: list[str] = []
-        self.after_work: str = "sleeping"
         
     def __enter__(self):
         self.working_on.extend(["MicroServiceArchitecture", "EventDrivenArchitecture"])
