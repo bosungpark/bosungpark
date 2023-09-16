@@ -9,7 +9,7 @@ class ParkBosung(BackendDeveloper):
     resides_in: str = "🇰🇷"
     company: str = "looko"
     speaks: list[str] = ["ko", "en", "zh-cn"]
-    programming_language: Literal["python", "java", "golang", "c++"] =  "golang"
+    programming_language: Literal["python", "golang"] =  "golang"
     
     def __init__(self):
         self.interest: str | None = None
@@ -17,7 +17,7 @@ class ParkBosung(BackendDeveloper):
         self.after_work: str | None = None
         
     def __enter__(self):
-        self.working_on.extend(["MicroServiceArchitecture", "EventDrivenArchitecture"])
+        self.working_on.extend([])
         self.interest = "DistributedSystem"
         return super().__enter__()
 
