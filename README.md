@@ -23,7 +23,7 @@ class ParkBosung(BackendDeveloper):
 
     def __exit__(self, *args):
         super().__exit__(*args)
-        self.after_work = next((w for w in self.working_on), None) or self.interest
+        self.after_work = self.working_on.pop() or self.interest
         self.working_on.clear()
         
         
