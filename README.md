@@ -1,16 +1,41 @@
-### Hi there 👋
+```go
+package main
 
-<!--
-**bosungpark/bosungpark** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+import (
+	"fmt"
+)
 
-Here are some ideas to get you started:
+type ProgrammingLanguage string
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+const (
+	Python ProgrammingLanguage = "python"
+	Golang ProgrammingLanguage = "golang"
+)
+
+type ParkBosung struct {
+	ResidesIn           string
+	Company             string
+	Speaks              []string
+	ProgrammingLanguage ProgrammingLanguage
+}
+
+func NewParkBosung() *ParkBosung {
+	return &ParkBosung{
+		ResidesIn:           "🇰🇷",
+		Company:             "coxwave",
+		Speaks:              []string{"ko", "en", "zh-cn"},
+		ProgrammingLanguage: Golang,
+	}
+}
+
+func (p *ParkBosung) SpeakMe() {
+	fmt.Printf("hi, my name is %s!\n", "ParkBosung")
+	fmt.Printf("my current interest is server development.\n")
+}
+
+func main() {
+	bosungPark := NewParkBosung()
+	bosungPark.SpeakMe()
+}
+
+```
